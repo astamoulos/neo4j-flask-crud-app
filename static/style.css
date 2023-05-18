@@ -1,0 +1,667 @@
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+.body{
+}
+/* layout */
+.layout {
+  display: grid;
+  grid-template-columns: 250px 400px auto;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.layout__main{
+  justify-self: center;  
+}
+
+.layout__right-sidebar {
+  position: fixed;
+  width: 350px;
+}
+
+/* layout */
+
+/* sidebar */
+.sidebar-menu {
+  
+  position: fixed;
+  width: 100px;
+}
+
+.sidebar-menu__item {
+  font-size: 19px;
+  color: #0F141A;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.sidebar-menu__item:hover {
+  background: rgba(29, 161, 242, 0.1);
+  color: #1da0f2;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.sidebar-menu__item--active {
+  color: #1da0f2;
+}
+
+.sidebar-menu__item--active{
+  filter: invert(67%) sepia(60%) saturate(4956%) hue-rotate(176deg) brightness(95%) contrast(99%);
+}
+
+.sidebar-menu__item a{
+  
+  text-decoration: none;
+  color: inherit;
+  width: 250px;
+  height: 40px;
+}
+/* sidebar */
+
+/* tweet */
+.tweet {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid #e6ecf0;
+  margin-bottom: 2px;
+  padding: 10px 15px;
+}
+
+.tweet:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.tweet:hover .edit_form {
+   display: block; /* show the form when the user hovers over the card */
+}
+
+.tweet:hover .delete_form {
+   display: block; /* show the form when the user hovers over the card */
+}
+
+
+.tweet a {
+  color: #1b94e0;
+  text-decoration: none;
+}
+
+.tweet a:hover {
+  text-decoration: underline;
+}
+
+.tweet__author-logo {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.tweet__header {
+  display: flex;
+}
+
+.tweet__author-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #14171a;
+  margin-right: 5px;
+}
+
+.tweet__author-slug {
+  color: #5b7083;
+  font-size: 15px;
+}
+
+.tweet__publish-time {
+  margin-left: 5px;
+  color: #657786;
+}
+
+.tweet__image {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.edit_form {
+    display: none;
+    position: absolute; 
+    top: 0; 
+    right: 30px;
+}
+
+.edit_form a{
+    text-decoration: none;
+}
+
+.delete_form {
+    display: none;
+    position: absolute; 
+    top: 0; 
+    right: 0;
+}
+
+
+.tweet__delete-button{
+    cursor: pointer;
+    border: none;
+    background: none;    
+}
+
+border: none;
+    background: none;
+/* tweet */
+
+/* Style for the search form */
+.widgets{
+  margin-left: 10px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.search-form .form-group {
+  position: relative;
+  margin: 0 10px;
+}
+
+.search-form .search-input {
+  background-color: #f5f8fa;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 300px;
+  box-shadow: none;
+}
+
+.search-form .search-btn {
+  background-color: #1da1f2;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  width: 100px;
+}
+
+.search-form .search-btn:hover {
+  background-color: #0c8ed9;
+}
+
+.search-form .search-btn:active {
+  background-color: #0c8ed9;
+  transform: translateY(1px);
+}
+/* Style for the search form */
+
+.register-button {
+  background-color: #1DA1F2; /* Twitter blue */
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100px;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.button-link{
+    text-decoration: none;
+}
+
+.register-button:hover {
+  background-color: #0E71C8; /* Darker blue on hover */
+}
+
+/* register */
+.alert1 {
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb; 
+  display: inline-block;
+}
+
+.alert {
+  margin-top: 20px;
+  margin-bottom: -60px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb; 
+  text-align: center;
+}
+
+body .login-box{
+  background: linear-gradient(#141e30, #243b55);  
+}
+
+.login-box { 
+  margin-block-start: 100px;
+  width: 400px;
+  padding: 40px;
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box textarea {
+  width: 100%;
+  height: calc(1.2em * 3);
+  padding-top: 10px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: transparent;
+  resize: none; /* to prevent users from resizing the textarea */
+}
+
+.login-box .user-box textarea::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.login-box .user-box textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.login-box .user-box textarea::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label{
+  top: -20px;
+  left: 0;
+  color: #0c8ed9;
+  font-size: 12px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #0c8ed9;
+  font-size: 16px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.login-box form button:hover {
+  background: #0c8ed9;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #0c8ed9,
+              0 0 25px #0c8ed9,
+              0 0 50px #0c8ed9,
+              0 0 100px #0c8ed9;
+}
+
+.login-box form button span {
+  position: absolute;
+  display: block;
+}
+
+.login-box form button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0c8ed9);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box form button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #0c8ed9);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box form button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #0c8ed9);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box form button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #0c8ed9);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+/* end register */
+
+/* profile */
+
+.card {
+  position: relative;
+  box-shadow: 1px 1px 10px 1px #a1a1a1;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 350px;
+}
+
+.card:hover .edit_user {
+   display: block; /* show the form when the user hovers over the card */
+}
+
+.edit_user{
+    display: none;
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    right: 0;
+}
+
+.main-profile {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.main-profile {
+  position: relative;
+}
+
+.user-info img {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+}
+
+.user-info h3 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.user-info p {
+  color: #5b7083;
+}
+
+.follow-btn button {
+  font-size: 1.5rem;
+  border: 3px solid #1da1f2;
+  border-radius: 25px;
+  background-color: rgba(29, 161, 242, 0);
+  padding: 8px 20px;
+  margin: 5px;
+  font-weight: bold;
+  color: #1da1f2;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.follow-btn button:hover {
+  background-color: rgba(29, 161, 242, 0.2);
+}
+
+.user-bio {
+  margin-bottom: 5px;
+  color: #0f1419;
+}
+
+.user-bio a{
+  color: #1da1f2;
+  text-decoration: none;
+}
+
+.user-bio a:hover {
+  text-decoration: underline;
+}
+
+.user-follows {
+  display: flex;
+  color: #5b7083;
+}
+
+.user-follows div {
+  margin-right: 10px;
+}
+
+.user-follows b {
+  color: black;
+}
+/*end profile */
+
+/* trends */
+
+.trends-for-you {
+  border-radius: 15px;
+  background: #f5f8fa;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-top: 20px;
+  width:350px;
+  height: 241px; /* Set the maximum height of the container */
+  overflow-y: scroll;
+}
+
+.trends-for-you::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.trends-for-you::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.trends-for-you::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+.trends-for-you__block {
+  border-bottom: 1px solid #e6ecf0;
+  padding: 10px 15px;
+}
+
+.trends-for-you__heading {
+  font-size: 19px;
+  font-weight: bold;
+  color: #14171a;
+}
+
+.trends-for-you__trend-name {
+  font-size: 15px;
+  color: #14171a;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+
+.trends-for-you__meta-information {
+  font-size: 13px;
+  font-weight: 300;
+  color: #657786;
+}
+
+/* WHO FOLLOW */
+.who-to-follow {
+  background: #f5f8fa;
+  border-radius: 15px;
+  margin-left: 20px;
+  margin-top: 20px;
+  width:350px;
+  max-height: 255.01px; /* Set the maximum height of the container */
+  overflow-y: scroll;
+}
+
+.who-to-follow::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.who-to-follow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.who-to-follow::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+
+.who-to-follow__block {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.who-to-follow__block:last-child {
+  border-bottom: none;
+}
+
+.who-to-follow__author-logo {
+  width: 49px;
+  height: 49px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.who-to-follow__author-slug {
+  color: #657786;
+  font-size: 15px;
+}
+
+.who-to-follow__author-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.who-to-follow__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.who-to-follow__heading {
+  font-size: 19px;
+  font-weight: bold;
+  color: #14171a;
+}

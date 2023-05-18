@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-box">
+    <h2>Edit user</h2>
+    <form  method="post">
+        <div class="user-box">
+            <input type="text" name="screen_name" required=""
+            value={{user_info['screen_name']}}>
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="name" required=""
+            value={{user_info['name']}}>
+            <label>Full name</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="location" required=""
+            value={{user_info['location']}}>
+            <label>Location</label>
+        </div>
+        <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </button>
+    </form>
+</div>
+{% endblock %}

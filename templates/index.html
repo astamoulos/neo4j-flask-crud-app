@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+        {% for post in posts %}
+        <div class="tweet">
+            <img class="tweet__author-logo" src='static/profile-image-2.png'/>
+            <div class="tweet__main">
+                <div class="tweet__header">
+                    <div class="tweet__author-name">{{ post.screen_name }}</div>
+                    <div class="tweet__author-slug">@{{ post.screen_name }}</div>
+                    <div class="tweet__publish-time">{{ post.time }}</div>
+                </div>
+                <div class="tweet__content">{{ post.text }}</div>
+            </div>
+        </div>
+        {% endfor %}
+{% endblock %}
+
+{% block trends %}
+    <div class="trends-for-you">
+        <div class="trends-for-you__block">
+            <div class="trends-for-you__heading">
+                Trends
+            </div>
+        </div> 
+        {% for trend in trends %}
+            <div class="trends-for-you__block">
+                <div class="trends-for-you__trend-name">
+                    {{trend['name']}}
+                </div>
+                <div class="trends-for-you__meta-information">
+                    {{trend['Hashtags']}} Tweets
+                </div>
+            </div>  
+        {% endfor %}
+    </div>
+{% endblock %}

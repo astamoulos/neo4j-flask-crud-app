@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="user-info">
+        {% if posts['screen_name']%}
+            <div class="profile-container">
+              <div class="card">
+                    <div class="edit_user">
+                        <form action="{{ url_for('edit_user', oldname=posts['screen_name']) }}" >
+                            <button type="submit" class="tweet__delete-button">
+                                ✏️
+                            </button>
+                        </form>  
+                    </div>
+                <div class="profile">
+                  <div class="main-profile">
+                    <div class="user-info">
+                      <img src='/static/profile-image-2.png'/>
+                      <h3>{{ posts['name'] }}</h3>
+                      @{{ posts['screen_name'] }}
+                    </div>
+                  </div>
+                  <div class="user-bio">
+                     &#128205; {{ posts['location'] }}
+                  </div>
+                  <div class="user-follows">
+                    <div><b>{{ posts['following'] }}</b> Following</div>
+                    <div><b>{{ posts['followers'] }}</b> Followers</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- <h1>User: {{ posts['screen_name'] }}</h1> -->
+        {% else %}
+        <h1>User not found </h1>
+        {% endif %}
+    </div>
+    <hr>
+    {% for text in posts['texts'] %}
+        <div class="tweet">
+            <!-- <img class="tweet__author-logo" src="/images/profile-image-2.png" /> -->
+            <div class="tweet__main">
+                <div class="tweet__header">
+                    <div class="tweet__author-name">{{  posts['screen_name'] }}</div>
+                    <div class="tweet__author-slug">@{{  posts['screen_name'] }}</div>
+                    <div class="tweet__publish-time">38m</div>
+                    <div class="edit_form">
+                        <form action="{{ url_for('edit_tweet', id=posts['ids'][loop.index0], text=posts['texts'][loop.index0]) }}" >
+                            <button type="submit" class="tweet__delete-button">
+                                ✏️
+                            </button>
+                        </form>  
+                    </div>
+                    <div class="delete_form">
+                        <form method="POST" action="{{ url_for('delete_tweet', id=posts['ids'][loop.index0]) }}" >
+                            <button type="submit" class="tweet__delete-button"  
+                                onclick="return confirm('Are you sure you want to delete this entry?')">
+                                ❌
+                            </button>
+                        </form>                    
+                    </div>  
+                </div>
+                <div class="tweet__content">{{ text }}</div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block trends %}
+<div class="who-to-follow">
+  <div class="who-to-follow__block">
+    <div class="who-to-follow__heading">
+      Who to follow
+    </div>
+  </div>
+    {% for user in who_to_follow %}
+      <div class="who-to-follow__block">
+        <img class="who-to-follow__author-logo" src="{{ user['image'] }}" onerror="this.onerror=null;this.src='/static/profile-image-2.png';" />
+        <div class="who-to-follow__content">
+          <div>
+            <div class="who-to-follow__author-name">
+              {{  user['name'] }}
+            </div>
+            <div class="who-to-follow__author-slug">
+              @{{  user['name'] }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}

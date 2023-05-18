@@ -1,0 +1,46 @@
+    <!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog</title>
+        {% endif %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="layout">
+            <div class="layout__left-sidebar">
+                <div class="sidebar-menu">
+                    <!--
+                    <div class="sidebar-menu__item sidebar-menu__item--active">
+                        <a href="/">Home</a>
+                    </div>
+                    -->
+                    <a href="/">
+                       <img src='/static/logo.png' alt="Logo"height="40">
+                    </a>
+                    <a href="{{ url_for('register') }}" class="button-link"><button class="register-button">Register</button></a>
+                    <a href="{{ url_for('delete') }}" class="button-link"><button class="register-button">Delete</button></a>
+                    <a href="{{ url_for('follow') }}" class="button-link"><button class="register-button">Follow</button></a>
+                    <a href="{{ url_for('unfollow') }}" class="button-link"><button class="register-button">Unfollow</button></a>
+                    <a href="{{ url_for('tweet') }}" class="button-link"><button class="register-button">Tweet</button></a>
+                </div>
+            </div>
+            <div class="layout__main">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="layout__right-sidebar-container">
+                <div class=widgets>
+                    <form class="search-form" action="{{ url_for('index') }}" method="post">
+                        <div class="form-group">
+                            <input class="search-input" type="text" value="alexstam" name="username" required>
+                        </div>
+                        <button class="search-btn" type="submit">Search</button>
+                    </form>
+                </div>
+                {% block trends %}{% endblock %}
+            </div>   
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-box">
+    <h2>Edit Tweet</h2>
+    <form action="{{ url_for('edit_tweet',id=id, text=text) }}" method="post">
+        <div class="user-box">
+            <textarea name="tweet-text" required="" maxlength="280">{{text}}</textarea>
+        </div>
+        <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Tweet
+        </button>
+    </form>
+</div>
+{% endblock %}
